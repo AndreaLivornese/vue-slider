@@ -17,8 +17,8 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item" v-for="(currentItem,index) in slides" v-show="index == showImageIndex">
-                    <img :src="currentItem.image" :alt="'immagine ' + (index+1)" />
+                <div class="item" v-for="(currentItem,index) in slides" v-show="index == showImageIndex" >
+                    <img :src="currentItem.image" :alt="'immagine ' + (index+1)" v-on:mouseover="stop()" v-on:mouseleave="start"/>
                     <div class="text">
                         <h3>{{currentItem.title}}</h3>
                         <p>

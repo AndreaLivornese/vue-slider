@@ -8,6 +8,7 @@ const { createApp } = Vue
 
             showImageIndex: 0,
 
+            active:true,
 
             slides: [
                 {
@@ -41,10 +42,12 @@ const { createApp } = Vue
     methods: {
 
         nextImage(){
-            this.showImageIndex++;
-
-            if(this.showImageIndex >= this.slides.length){
-                this.showImageIndex = 0;
+            if(this.active){
+                this.showImageIndex++;
+    
+                if(this.showImageIndex >= this.slides.length){
+                    this.showImageIndex = 0;
+                }
             }
         },
 
@@ -63,12 +66,19 @@ const { createApp } = Vue
         },
 
         autoPlay(){
-          
             setInterval(this.nextImage, 3 * 1000);
+            
+           
+            
+        },
 
+        stop(){
+            this.active=false;
+        },
+
+        start(){
+            this.active=true;
         }
-
-        
 
     }
   }).mount('#app')
