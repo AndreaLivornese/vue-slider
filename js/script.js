@@ -54,7 +54,15 @@ const { createApp } = Vue
             if(this.showImageIndex < 0){
                 this.showImageIndex = this.slides.length - 1;
             }
+        },
+
+        thumbsActive(index){
+
+            this.showImageIndex = index;
+
         }
+
+        
 
     }
   }).mount('#app')
