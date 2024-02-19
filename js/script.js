@@ -60,6 +60,12 @@ const { createApp } = Vue
 
             this.showImageIndex = index;
 
+        },
+
+        autoPlay(){
+          
+            setInterval(this.nextImage, 3 * 1000);
+
         }
 
         
